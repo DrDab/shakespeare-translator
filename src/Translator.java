@@ -82,8 +82,26 @@ public class Translator
 			}
 			else
 			{
-				accum.add(bestComparison + furrydiff[tmpIdx]);
-				tmpIdx = (bestIdx + 1);
+				if (accum.size() != 0)
+				{
+					String chkEnd = accum.get(accum.size() - 1).substring(accum.get(accum.size() - 1).length() - 1);
+					if (chkEnd.charAt(0) == '.' || chkEnd.charAt(0) == '!' || chkEnd.charAt(0) == '?' || chkEnd.charAt(0) == '-')
+					{
+						bestComparison = (bestComparison.substring(0, 1).toUpperCase() + bestComparison.substring(1));
+						accum.add(bestComparison + furrydiff[tmpIdx]);
+						tmpIdx = (bestIdx + 1);
+					}
+					else
+					{
+						accum.add(bestComparison + furrydiff[tmpIdx]);
+						tmpIdx = (bestIdx + 1);
+					}
+				}
+				else
+				{
+					accum.add(bestComparison + furrydiff[tmpIdx]);
+					tmpIdx = (bestIdx + 1);
+				}
 			}
 			/*
 			System.out.println("B:" + bestComparison);
