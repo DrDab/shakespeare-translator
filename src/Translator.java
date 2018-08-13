@@ -29,6 +29,7 @@ public class Translator
 			tmpJSON += inputLine;
 		}
 		obj = new JSONObject(tmpJSON);
+		br.close();
 	}
 
 	
@@ -41,17 +42,15 @@ public class Translator
 		String[] furrydiff = new String[prefurry.length];
 		for(int i = 0; i < prefurry.length; i++)
 		{
-			furry[i] = prefurry[i].replaceAll("[,.!]", "").toLowerCase();
+			furry[i] = prefurry[i].replaceAll("[,.!?-]", "").toLowerCase();
 			furrydiff[i] = StringUtils.difference(furry[i], prefurry[i]);
 		}
-		Set<String> keySet = obj.keySet();
 		int tmpIdx = 0;
 		int max = furry.length;
 		while(tmpIdx < max)
 		{
 			int cnt = 0;
 			String comparison = "";
-			String compared = "";
 			String bestComparison = "";
 			int bestIdx = tmpIdx;
 			for(int i = tmpIdx; i < max; i++)
@@ -70,7 +69,6 @@ public class Translator
 					if (s.length() > bestComparison.length())
 					{
 						bestComparison = s;
-						compared = comparison;
 						bestIdx = i;
 					}
 				}
