@@ -18,11 +18,10 @@ import org.json.JSONObject;
 public class Translator
 {
 	private JSONObject obj;
-	public Translator() throws IOException
+	public Translator(String fileName) throws IOException
 	{
-		// Translator.class.getResourceAsStream("/definitions.json");
 		String tmpJSON = "";
-		BufferedReader br = new BufferedReader(new FileReader("definitions.json"));
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		String inputLine;
 		while ((inputLine = br.readLine()) != null)
 		{
