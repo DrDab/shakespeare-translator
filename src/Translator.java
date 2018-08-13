@@ -38,6 +38,7 @@ public class Translator
 		ArrayList<String> accum = new ArrayList<String>();
 		String toReturn = "";
 		String[] prefurry = input.toLowerCase().split(" ");
+		String[] prefurry2 = input.split(" ");
 		String[] furry = new String[prefurry.length];
 		String[] furrydiff = new String[prefurry.length];
 		for(int i = 0; i < prefurry.length; i++)
@@ -76,7 +77,7 @@ public class Translator
 			
 			if (bestComparison.matches(""))
 			{
-				accum.add(furry[tmpIdx] + furrydiff[tmpIdx]);
+				accum.add(prefurry2[tmpIdx]);
 				tmpIdx++;
 			}
 			else
