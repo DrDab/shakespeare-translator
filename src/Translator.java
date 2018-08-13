@@ -78,16 +78,15 @@ public class Translator
 			
 			if (bestComparison.matches(""))
 			{
-				System.out.println("A");
 				accum.add(furry[tmpIdx] + furrydiff[tmpIdx]);
 				tmpIdx++;
 			}
 			else
 			{
-				System.out.println("B");
 				accum.add(bestComparison + furrydiff[tmpIdx]);
 				tmpIdx = (bestIdx + 1);
 			}
+			/*
 			System.out.println("B:" + bestComparison);
 			System.out.println("C:" + compared);
 			System.out.println("R:" + toReturn);
@@ -95,6 +94,7 @@ public class Translator
 			System.out.println("A:" + accum.toString());
 			System.out.println("D:" + Arrays.toString(furrydiff));
 			System.out.println("I:" + tmpIdx + " B:" + bestIdx);
+			*/
 		}
 		for(String yiff : accum)
 		{
