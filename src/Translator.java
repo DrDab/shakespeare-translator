@@ -2,17 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
-import java.util.TreeSet;
-
 import org.apache.commons.lang3.StringUtils;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Translator
@@ -98,6 +88,7 @@ public class Translator
 				}
 				else
 				{
+					bestComparison = (bestComparison.substring(0, 1).toUpperCase() + bestComparison.substring(1));
 					accum.add(bestComparison + furrydiff[tmpIdx]);
 					tmpIdx = (bestIdx + 1);
 				}
