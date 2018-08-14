@@ -2,14 +2,20 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 
+@SuppressWarnings("all")
 public class Translator
 {
 	private JSONObject obj;
-	public Translator(String fileName) throws IOException
+	private boolean debug;
+	
+	public Translator(String fileName, boolean debug) throws IOException
 	{
+		this.debug = debug;
 		String tmpJSON = "";
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		String inputLine;
@@ -93,15 +99,16 @@ public class Translator
 					tmpIdx = (bestIdx + 1);
 				}
 			}
-			/*
-			System.out.println("B:" + bestComparison);
-			System.out.println("C:" + compared);
-			System.out.println("R:" + toReturn);
-			System.out.println("F:" + Arrays.toString(furry));
-			System.out.println("A:" + accum.toString());
-			System.out.println("D:" + Arrays.toString(furrydiff));
-			System.out.println("I:" + tmpIdx + " B:" + bestIdx);
-			*/
+			
+			if (debug)
+			{
+				System.out.println("B:" + bestComparison);
+				System.out.println("R:" + toReturn);
+				System.out.println("F:" + Arrays.toString(furry));
+				System.out.println("A:" + accum.toString());
+				System.out.println("D:" + Arrays.toString(furrydiff));
+				System.out.println("I:" + tmpIdx + " B:" + bestIdx);
+			}
 		}
 		for(String yiff : accum)
 		{

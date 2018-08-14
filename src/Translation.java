@@ -4,7 +4,7 @@ public class Translation
 {
 	public static void main (String[] args) throws IOException
 	{
-		Translator t = new Translator("definitions.json");
+		Translator t = new Translator("definitions.json", false);
 		System.out.println(t.getTranslated("I'm like bitch who is yo mans?\n"
 				+ "Can't keep my dick in my pants!\n"
 				+ "My bitch don't love me no more, aye\n"
