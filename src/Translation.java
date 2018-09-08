@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Translation
 {
+	@SuppressWarnings("resource")
 	public static void main (String[] args) throws IOException
 	{
 		Translator t = new Translator("definitions.json", false);
